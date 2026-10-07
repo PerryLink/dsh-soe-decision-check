@@ -1,0 +1,43 @@
+import { describeTablePlugin } from './table-plugin-suite.ts'
+import { Config } from '../src/config.ts'
+import { parseMaterial, runCheck, SPEC } from '../src/model.ts'
+import { buildView } from '../src/view.ts'
+import { inject, name, resolvePackageFile, TOOL_NAME } from '../src/index.ts'
+
+describeTablePlugin({
+  name,
+  inject,
+  TOOL_NAME,
+  resolvePackageFile,
+  Config,
+  rulesFile: 'rules/soe-decision-check.yaml',
+  parseMaterial,
+  runCheck,
+  buildView,
+  columnNames: SPEC.columns,
+  samples: {
+    good: {
+          "company": "某某集团有限公司",
+          "body": "党委会",
+          "meetingNo": "2026 年第 3 次",
+          "meetingAt": "2026-03-05",
+          "rows": [
+                {
+                      "序号": "1",
+                      "决策事项": "某某技改项目立项",
+                      "事项类别": "重大项目安排",
+                      "议题内容": "提请审议某某技改项目立项及投资概算",
+                      "决策依据": "公司\"三重一大\"决策制度实施办法第 12 条",
+                      "涉及金额": "4800万元",
+                      "前置研究": "是",
+                      "前置研究日期": "2026-02-20",
+                      "会议日期": "2026-03-05",
+                      "决议结论": "同意立项，投资概算控制在 4800 万元以内",
+                      "表决结果": "应到 9 人，实到 9 人，同意 9 票",
+                      "承办部门": "发展策划部"
+                }
+          ]
+    },
+    unknownColumn: { rows: [{ 备注: '甲' }] },
+  },
+})

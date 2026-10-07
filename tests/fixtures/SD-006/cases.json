@@ -1,0 +1,31 @@
+{
+  "ruleId": "SD-006",
+  "configure": {
+    "SD-006": {
+      "values": [
+        "重大决策",
+        "重要人事任免",
+        "重大项目安排",
+        "大额度资金运作"
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "SD-006-compliant.json",
+      "expect": {
+        "ruleId": "SD-006",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "SD-006-unsafe.json",
+      "expect": {
+        "ruleId": "SD-006",
+        "count": 1
+      }
+    }
+  ]
+}
