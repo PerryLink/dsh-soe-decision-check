@@ -1,6 +1,6 @@
 {
   "name": "dsh-soe-decision-check",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "三重一大决策台账核对（按前置研究、会议审议与决议记录核对程序留痕，仅提示差异，不作出定性结论）",
   "type": "module",
   "main": "lib/index.mjs",
