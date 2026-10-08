@@ -1,4 +1,23 @@
-# dsh-soe-decision-check
+# dsh-soe-decision-check — State-owned enterprise “三重一大” (three important and one large) decision register procedural-trail check
+
+`dsh-soe-decision-check` reads one “三重一大” decision register — the enterprise header plus one row per matter — and checks that register's own procedural trail: that each matter records its proposal or its basis, that a matter marked as pre-studied records a study date, that the pre-study date is not later than the meeting date, that a decision is recorded and a decided matter records its vote, that the matter category comes from the vocabulary you configure, that the register names the enterprise and the deciding body, and that matter numbers are unique.
+
+## What it answers
+
+| You ask | What it answers |
+|---|---|
+| A matter has neither its proposal nor its basis filled in. Does the check say anything? | Yes. `SD-001` requires at least one of those two columns on every row that carries either one, and reports the row when both are blank. It checks that at least one is filled, not whether the matter belongs to the “三重一大” scope, and not whether the decision procedure or the authority behind it was appropriate. |
+| The register marks a matter as pre-studied, but the study date is empty. | `SD-002` reads the register's own 前置研究 column and reports the row when its value counts as pre-studied while the study date (`consultedAt`) is blank. Which values count is set by the rule's `conditionValues` (是, Y, yes, true, 已研究, √ by default). It checks that the date is filled, not whether the pre-study was substantive or whether its conclusion was adopted. When no row carries such a value, the rule reports itself in `skipped` instead of passing. |
+| The study date is later than the meeting date — or cannot be read as a date at all. | `SD-003` compares the study date (`consultedAt`) with the meeting date (`meetingAt`) and reports a study date later than the meeting; the same day counts as not later. A date it cannot parse is reported as its own finding rather than skipped. It compares those two dates only — it does not judge whether the procedure was really carried out. |
+| One row records no decision; another records a decision but no vote result. | `SD-004` requires the decision column (`decision`) on every row that carries it, and `SD-005` then requires the vote column (`voteResult`) only on rows where a decision is recorded. Neither checks whether the votes reached a required proportion: that proportion comes from your enterprise's implementing measures, and the rule does not compute it. |
+| `SD-006` never reports anything on my register. | Its category vocabulary ships empty, so with no `values` configured `SD-006` reports itself in `skipped` rather than passing silently. Configure your own matter categories and it checks only that a filled category (`category`, 事项类别) is one of them; it does not decide whether the matter belongs to the “三重一大” scope. |
+| The same 序号 appears on two rows. | `SD-008` reports the repeated `matterNo`, ignoring whitespace, because a repeat makes the matter impossible to point at in the minutes. Deliberating one matter at several meetings is normal: distinguish those rows by meeting number instead of reusing the sequence number. The rule checks uniqueness only. |
+
+## Standards it follows
+
+| Document | Number | Cited by rules |
+|---|---|---|
+| 《关于进一步推进国有企业贯彻落实"三重一大"决策制度的意见》 | 中办发〔2010〕17号（中共中央办公厅、国务院办公厅印发；⚠️ 党内文件，非法律、行政法规或部门规章；全文分三部分，按（一）至（二十三）编号，不设"第X条"） | SD-001, SD-002, SD-003, SD-004, SD-005, SD-006, SD-007, SD-008 |
 
 **Boundary:** this plugin checks a **三重一大决策事项台账** for the procedural trail a register can be held to —
 that each matter records its proposal and its basis, that a matter marked as pre-studied records a study date,

@@ -1,4 +1,23 @@
-# dsh-soe-decision-check
+# dsh-soe-decision-check — Registo de assuntos de decisão «三重一大» (três importantes e um grande) de uma empresa estatal e verificação do seu rasto procedimental
+
+`dsh-soe-decision-check` lê um registo de assuntos de decisão «三重一大» —o cabeçalho da empresa mais uma linha por assunto— e verifica o rasto procedimental desse mesmo registo: se cada assunto regista a sua proposta ou o seu fundamento, se um assunto marcado como previamente estudado regista a data do estudo, se a data do estudo não é posterior à data da reunião, se está registada uma deliberação e se um assunto deliberado regista a votação, se a categoria do assunto vem da lista de valores que configurar, se o registo declara a empresa e o órgão decisor, e se os números de assunto não se repetem.
+
+## O que ele responde
+
+| Você pergunta | O que ele responde |
+|---|---|
+| Um assunto não tem preenchidos nem a proposta nem o fundamento. Isso é reportado? | Sim. `SD-001` exige que cada linha que traga uma dessas duas colunas tenha pelo menos uma preenchida e reporta a linha quando ambas estão vazias. Verifica que exista pelo menos uma, não se o assunto pertence ao âmbito «三重一大», nem se o procedimento ou a competência foram adequados. |
+| O registo marca um assunto como previamente estudado, mas a data do estudo está vazia. | `SD-002` lê a própria coluna 前置研究 do registo e reporta a linha quando o seu valor conta como previamente estudado e a data (`consultedAt`) está vazia. Que valores contam é fixado por `conditionValues` da regra (por defeito 是, Y, yes, true, 已研究, √). Verifica que a data está preenchida, não que o estudo prévio tenha sido substancial nem que a sua conclusão tenha sido adotada. Se nenhuma linha trouxer tal valor, a regra reporta-se a si mesma em `skipped` em vez de passar. |
+| A data do estudo é posterior à da reunião, ou não é legível como data. | `SD-003` compara a data do estudo (`consultedAt`) com a da reunião (`meetingAt`) e reporta quando a primeira é posterior; o mesmo dia conta como não posterior. Uma data que não consegue analisar é reportada à parte, não é omitida em silêncio. Compara apenas as duas datas: não julga se o procedimento foi realmente cumprido. |
+| Uma linha não regista deliberação; outra regista deliberação mas não votação. | `SD-004` exige a coluna da deliberação (`decision`) em cada linha que a traga, e `SD-005` exige depois a da votação (`voteResult`) apenas nas linhas com deliberação registada. Nenhuma verifica se os votos atingiram a proporção exigida: essa proporção consta das medidas de aplicação da sua empresa e a regra não a calcula. |
+| O `SD-006` nunca reporta nada no meu registo. | O seu vocabulário de categorias vem vazio, por isso sem `values` configurado o `SD-006` reporta-se a si mesmo em `skipped` em vez de passar em silêncio. Configure as suas próprias categorias e ele verificará apenas que a categoria preenchida (`category`, 事项类别) consta da lista; não decide se o assunto pertence ao âmbito «三重一大». |
+| O mesmo 序号 aparece em duas linhas. | `SD-008` reporta o `matterNo` repetido, ignorando espaços, porque a repetição impede apontar o assunto na ata. Que o mesmo assunto seja deliberado em várias reuniões é normal: distinga essas linhas pelo número da reunião em vez de reutilizar o número de ordem. A regra verifica apenas a unicidade. |
+
+## Normas que segue
+
+| Documento | Número | Regras que o citam |
+|---|---|---|
+| 《关于进一步推进国有企业贯彻落实"三重一大"决策制度的意见》 | 中办发〔2010〕17号（中共中央办公厅、国务院办公厅印发；⚠️ 党内文件，非法律、行政法规或部门规章；全文分三部分，按（一）至（二十三）编号，不设"第X条"） | SD-001, SD-002, SD-003, SD-004, SD-005, SD-006, SD-007, SD-008 |
 
 **Boundary:** this plugin checks a **三重一大决策事项台账** for the procedural trail a register can be held to —
 that each matter records its proposal and its basis, that a matter marked as pre-studied records a study date,
