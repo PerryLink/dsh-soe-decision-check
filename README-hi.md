@@ -45,8 +45,7 @@ exceeded, whether an amount reaches the "large fund operation" threshold, or who
 ## Install
 
 ```sh
-pnpm pack
-dsh plugin --profile <name> add ./*.tgz
+dsh plugin --profile <name> add dsh-soe-decision-check
 dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
 ```
 
