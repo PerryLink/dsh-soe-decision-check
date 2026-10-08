@@ -72,7 +72,6 @@ matter — applies a versioned rule pack, and returns a report.
 | `SD-006` | the category comes from your vocabulary (off by default) | info | local |
 | `SD-007` | the register names the enterprise and deciding body | warn | principle |
 | `SD-008` | matter numbers are unique | warn | principle |
-
 ## Install
 
 ```sh
