@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.5
+
+- Correct SD-006's basis kind back to `derived-from-principle`. The rule's own
+  note, added 2026-10-07, says explicitly that the text was verified but that the
+  instrument is a party and State Council document rather than a law,
+  administrative regulation or national standard, and that the rule therefore
+  stays `derived-from-principle`. The table had been left showing the older
+  institutional-configuration label.
+
 ## 0.2.4
 
 - Correct the severity and basis-kind cells in `## What it does` so they
