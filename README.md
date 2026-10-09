@@ -1,6 +1,14 @@
 # dsh-soe-decision-check — State-owned enterprise “三重一大” (three important and one large) decision register procedural-trail check
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-soe-decision-check` reads one “三重一大” decision register — the enterprise header plus one row per matter — and checks that register's own procedural trail: that each matter records its proposal or its basis, that a matter marked as pre-studied records a study date, that the pre-study date is not later than the meeting date, that a decision is recorded and a decided matter records its vote, that the matter category comes from the vocabulary you configure, that the register names the enterprise and the deciding body, and that matter numbers are unique.
+
+## What it looks like
+
+![Terminal demo of dsh-soe-decision-check: real output over its SD-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-soe-decision-check/main/docs/assets/dsh-soe-decision-check-demo.png)
+
+Real output from this plugin over its own `SD-001` test fixture — not a mock-up. The rule pack ships no invented quotations, so a finding names both the clause it applied and the fact that the clause text was not obtained.
 
 ## What it answers
 

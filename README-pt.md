@@ -1,6 +1,14 @@
 # dsh-soe-decision-check — Registo de assuntos de decisão «三重一大» (três importantes e um grande) de uma empresa estatal e verificação do seu rasto procedimental
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-soe-decision-check` lê um registo de assuntos de decisão «三重一大» —o cabeçalho da empresa mais uma linha por assunto— e verifica o rasto procedimental desse mesmo registo: se cada assunto regista a sua proposta ou o seu fundamento, se um assunto marcado como previamente estudado regista a data do estudo, se a data do estudo não é posterior à data da reunião, se está registada uma deliberação e se um assunto deliberado regista a votação, se a categoria do assunto vem da lista de valores que configurar, se o registo declara a empresa e o órgão decisor, e se os números de assunto não se repetem.
+
+## Como é a saída
+
+![Terminal demo of dsh-soe-decision-check: real output over its SD-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-soe-decision-check/main/docs/assets/dsh-soe-decision-check-demo.png)
+
+Saída real deste plugin sobre o seu próprio fixture de teste `SD-001` — não é uma simulação. O pacote de regras não inventa citações, por isso cada achado nomeia a cláusula aplicada e avisa que o seu texto não foi obtido.
 
 ## O que ele responde
 
