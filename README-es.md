@@ -6,7 +6,9 @@
 
 ## Cómo se ve la salida
 
-![Terminal demo of dsh-soe-decision-check: real output over its SD-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-soe-decision-check/main/docs/assets/dsh-soe-decision-check-demo.png)
+![Terminal demo of dsh-soe-decision-check: real output over its SD-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-soe-decision-check/main/docs/assets/dsh-soe-decision-check-hero.png)
+
+![Animated terminal demo of dsh-soe-decision-check](https://raw.githubusercontent.com/PerryLink/dsh-soe-decision-check/main/docs/assets/dsh-soe-decision-check-demo.gif)
 
 Salida real de este plugin sobre su propio fixture de prueba `SD-001` — no es un montaje. El paquete de reglas no inventa citas, así que cada hallazgo nombra la cláusula aplicada y advierte que su texto no se obtuvo.
 

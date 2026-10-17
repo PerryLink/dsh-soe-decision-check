@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/assets/dsh-soe-decision-check-hero.png",
+    "kind": "hero",
+    "alt": "dsh-soe-decision-check terminal output",
+    "caption": "Real dsh-soe-decision-check checker output; 31 tests passed."
+  },
+  {
+    "path": "docs/assets/dsh-soe-decision-check-demo.gif",
+    "kind": "demo",
+    "alt": "Animated dsh-soe-decision-check terminal session",
+    "caption": "The same run, assembled line by line."
+  }
+]
