@@ -4,6 +4,13 @@
 
 `dsh-soe-decision-check` reads one “三重一大” decision register — the enterprise header plus one row per matter — and checks that register's own procedural trail: that each matter records its proposal or its basis, that a matter marked as pre-studied records a study date, that the pre-study date is not later than the meeting date, that a decision is recorded and a decided matter records its vote, that the matter category comes from the vocabulary you configure, that the register names the enterprise and the deciding body, and that matter numbers are unique.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-soe-decision-check
+dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
+```
+
 ## What it looks like
 
 ![Terminal demo of dsh-soe-decision-check: real output over its SD-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-soe-decision-check/main/docs/assets/dsh-soe-decision-check-hero.png)
@@ -82,13 +89,6 @@ matter — applies a versioned rule pack, and returns a report.
 | `SD-006` | the category comes from your vocabulary (off by default) | info | principle |
 | `SD-007` | the register names the enterprise and deciding body | warn | principle |
 | `SD-008` | matter numbers are unique | warn | principle |
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-soe-decision-check
-dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
-```
-
 ## Configuration
 
 | Key | Type | Default | Description |

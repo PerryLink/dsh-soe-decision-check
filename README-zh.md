@@ -4,6 +4,13 @@
 
 `dsh-soe-decision-check` 读取一份「三重一大」决策事项台账——企业表头加每个议题一行——核对这份台账自身的程序留痕：每个议题是否记录了议题内容或决策依据、标注为经前置研究的议题是否记录了研究日期、前置研究日期是否不晚于会议审议日期、是否记录了决议结论、已决议的议题是否记录了表决结果、事项类别是否出自你配置的取值口径、台账是否声明企业与决策机构、议题序号是否唯一。
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-soe-decision-check
+dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
+```
+
 ## 实际输出长什么样
 
 ![Terminal demo of dsh-soe-decision-check: real output over its SD-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-soe-decision-check/main/docs/assets/dsh-soe-decision-check-hero.png)
@@ -70,13 +77,6 @@ exceeded, whether an amount reaches the "large fund operation" threshold, or who
 ## What it does
 
 规则表、字段说明与行为细节见 [README.md](README.md#what-it-does)（英文主版本）。本插件只列出材料与所引条款之间的字面差异，并对无法执行的检查在 `skipped` 中逐项说明。
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-soe-decision-check
-dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
-```
 
 ## Configuration
 

@@ -4,6 +4,13 @@
 
 `dsh-soe-decision-check` lê um registo de assuntos de decisão «三重一大» —o cabeçalho da empresa mais uma linha por assunto— e verifica o rasto procedimental desse mesmo registo: se cada assunto regista a sua proposta ou o seu fundamento, se um assunto marcado como previamente estudado regista a data do estudo, se a data do estudo não é posterior à data da reunião, se está registada uma deliberação e se um assunto deliberado regista a votação, se a categoria do assunto vem da lista de valores que configurar, se o registo declara a empresa e o órgão decisor, e se os números de assunto não se repetem.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-soe-decision-check
+dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
+```
+
 ## Como é a saída
 
 ![Terminal demo of dsh-soe-decision-check: real output over its SD-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-soe-decision-check/main/docs/assets/dsh-soe-decision-check-hero.png)
@@ -70,13 +77,6 @@ exceeded, whether an amount reaches the "large fund operation" threshold, or who
 ## What it does
 
 A tabela de regras, os campos e o comportamento detalhado estão em [README.md](README.md#what-it-does) (versão principal em inglês). O plugin apenas lista divergências literais frente às cláusulas citadas e indica em `skipped` cada verificação que não pôde ser executada.
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-soe-decision-check
-dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
-```
 
 ## Configuration
 
