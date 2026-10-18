@@ -38,12 +38,7 @@ dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
 |---|---|---|
 | 《关于进一步推进国有企业贯彻落实"三重一大"决策制度的意见》 | 中办发〔2010〕17号（中共中央办公厅、国务院办公厅印发；⚠️ 党内文件，非法律、行政法规或部门规章；全文分三部分，按（一）至（二十三）编号，不设"第X条"） | SD-001, SD-002, SD-003, SD-004, SD-005, SD-006, SD-007, SD-008 |
 
-**Boundary:** this plugin checks a **三重一大决策事项台账** for the procedural trail a register can be held to —
-that each matter records its proposal and its basis, that a matter marked as pre-studied records a study date,
-that the pre-study date is not later than the meeting date, that a decision and a vote record exist, that the
-matter category comes from your vocabulary, that the register names the enterprise and the deciding body, and
-that numbers are unique. It does **not** decide whether a decision was compliant, whether authority was
-exceeded, whether an amount reaches the "large fund operation" threshold, or who is accountable.
+**边界（中文译文，以英文原文为准）：** 本插件核对一份 **三重一大决策事项台账** 在台账层面可以要求到的程序留痕——每个事项是否记录其提案与依据，标注为已前置研究的事项是否记录研究日期，前置研究日期是否不晚于会议日期，是否存在决定与表决记录，事项类别是否取自你的取值口径，台账是否写明企业与决策机构，以及编号是否唯一。它**不**判定决策是否合规、是否超越权限、金额是否达到“大额资金运作”标准，或应由谁承担责任。
 
 > ### ⚠️ What this plugin deliberately does not know
 >
