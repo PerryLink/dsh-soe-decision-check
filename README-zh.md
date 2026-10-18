@@ -40,27 +40,17 @@ dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
 
 **边界（中文译文，以英文原文为准）：** 本插件核对一份 **三重一大决策事项台账** 在台账层面可以要求到的程序留痕——每个事项是否记录其提案与依据，标注为已前置研究的事项是否记录研究日期，前置研究日期是否不晚于会议日期，是否存在决定与表决记录，事项类别是否取自你的取值口径，台账是否写明企业与决策机构，以及编号是否唯一。它**不**判定决策是否合规、是否超越权限、金额是否达到“大额资金运作”标准，或应由谁承担责任。
 
-> ### ⚠️ What this plugin deliberately does not know
+> ### ⚠️ 本插件刻意不知道哪些事（以英文原文为准）
 >
-> **What counts as a "三重一大" matter, and at what amount, is set by each enterprise's own implementing
-> measures** — and the thresholds differ by industry, level and scale. So this plugin **hard-codes no amount
-> threshold and no matter list.** Instead:
+> **什么算「三重一大」事项、金额达到多少才算，由各企业自己的实施办法规定**——而阈值因行业、层级与规模而异。因此本插件**不硬编码任何金额阈值，也不硬编码任何事项清单。** 具体做法是：
 >
-> - `SD-002` reads the register's **own 前置研究 column** to decide whether a matter needed pre-study, and the
->   values that count as "pre-studied" are configurable.
-> - `SD-005` requires a vote record **only when a decision is recorded**, and it **does not check whether the
->   votes meet a required proportion** — that proportion comes from the implementing measures, and a register
->   rarely records the quorum and voting rule needed to compute it.
-> - `SD-006`'s category vocabulary ships **empty**; with nothing configured it reports itself in `skipped`.
+> - `SD-002` 读取台账**自己的「前置研究」栏**来判断某事项是否需要前置研究，而哪些取值算作「已前置研究」是可配置的。
+> - `SD-005` **只在记录了决定时**才要求有表决记录，而且它**不核对表决是否达到规定的比例**——该比例来自实施办法，而台账很少记录计算该比例所需的法定人数与表决规则。
+> - `SD-006` 的事项类别取值清单出厂为**空**；在未配置任何取值时，它把自己记入 `skipped`。
 >
-> **Every `excerpt` in the rule pack says, in so many words, that the clause text was not obtained.** The
-> regime lives in 《关于进一步推进国有企业贯彻落实"三重一大"决策制度的意见》(中办发〔2010〕17号) and each
-> enterprise's implementing measures. The verification pass could not retrieve verbatim clause text, so the
-> pack states the gap in the `excerpt` field itself and keeps every rule at `warn` or `info`. **When the texts
-> are in hand, replace each `excerpt` with the real clause and raise `kind` to `direct`.**
+> **规则库中的每一个 `excerpt` 都明文写着：条款原文本次未取得。** 该制度见于《关于进一步推进国有企业贯彻落实「三重一大」决策制度的意见》（中办发〔2010〕17号）以及各企业的实施办法。核验环节无法取得逐字条款原文，因此规则库在 `excerpt` 字段本身写明这一缺口，并把每条规则保持在 `warn` 或 `info`。**待取得原文后，请把每个 `excerpt` 换成真实条款，并把 `kind` 提到 `direct`。**
 >
-> A further limit worth stating: this checks that the **trail** exists. A study recorded on the right date does
-> not prove the pre-study was substantive, and the plugin makes no finding about that.
+> 还有一项局限值得说明：这里核对的是**留痕**是否存在。一次记录在正确日期上的研究，并不能证明前置研究是实质性的，本插件对此不作任何判定。
 
 ## Compatibility
 
