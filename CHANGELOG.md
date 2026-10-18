@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.12] - 2026-10-18
+
+### Fixed
+
+- 0.2.11/0.2.10 landed in npm's staging area and could not be approved without 2FA in this environment. This patch is the same dependency change, published directly from a clean tree so the install-size fix is actually available.
+
 ## [0.2.11] - 2026-10-18
 
 ### Changed
