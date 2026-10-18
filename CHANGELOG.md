@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.13] - 2026-10-18
+
+### Fixed
+
+- Same dependency change as 0.2.12, published directly after npm staged the prior patch; no code change.
+
 ## [0.2.12] - 2026-10-18
 
 ### Fixed
