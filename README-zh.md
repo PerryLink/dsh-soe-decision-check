@@ -30,6 +30,35 @@ dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
 下表是示例集：第一行是详细走查，其余行是简短案例。
 
 
+#### 详细输出
+
+**工具** `soe_decision_check`
+
+**输入**
+
+~~~json
+{"meetingAt":"2026-03-05","rows":[{"前置研究":"是","前置研究日期":"2026-03-10","会议日期":"2026-03-05"}]}
+~~~
+ 
+**输出**
+
+~~~json
+{
+  "id": "dsh-soe-decision-check.SD-003.de09b5a6",
+  "ruleId": "SD-003",
+  "severity": "warn",
+  "locator": {
+    "row": 1,
+    "field": "consultedAt"
+  },
+  "found": "第 1 行「consultedAt」为 2026-03-10，晚于 「meetingAt」的 2026-03-05",
+  "expected": "「consultedAt」不应晚于 2026-03-05",
+  "fix": "前置研究日期不应晚于会议审议日期；核对两个日期的填写"
+}
+~~~
+
+*来源 `dsh-soe-decision-check/tests/fixtures/SD-003/SD-003-unsafe.json`*
+
 | 你会问 | 它怎么答 |
 |---|---|
 | 某个议题的议题内容与决策依据都没有填写，会被报出吗？ | 会。`SD-001` 要求携带这两栏中任一栏的行至少填写一项，两项皆空即报出该行。它只核对是否至少填了一项，不判断该事项是否属于「三重一大」范围，也不判断决策程序与权限是否适当。 |

@@ -30,6 +30,35 @@ Saída real deste plugin sobre o seu próprio fixture de teste `SD-001` — não
 A tabela abaixo é o conjunto de exemplos: a primeira linha é o caso detalhado e as demais são casos curtos.
 
 
+#### Saída detalhada
+
+**Ferramenta** `soe_decision_check`
+
+**Entrada**
+
+~~~json
+{"meetingAt":"2026-03-05","rows":[{"前置研究":"是","前置研究日期":"2026-03-10","会议日期":"2026-03-05"}]}
+~~~
+ 
+**Saída**
+
+~~~json
+{
+  "id": "dsh-soe-decision-check.SD-003.de09b5a6",
+  "ruleId": "SD-003",
+  "severity": "warn",
+  "locator": {
+    "row": 1,
+    "field": "consultedAt"
+  },
+  "found": "第 1 行「consultedAt」为 2026-03-10，晚于 「meetingAt」的 2026-03-05",
+  "expected": "「consultedAt」不应晚于 2026-03-05",
+  "fix": "前置研究日期不应晚于会议审议日期；核对两个日期的填写"
+}
+~~~
+
+*Observado em `dsh-soe-decision-check/tests/fixtures/SD-003/SD-003-unsafe.json`*
+
 | Você pergunta | O que ele responde |
 |---|---|
 | Um assunto não tem preenchidos nem a proposta nem o fundamento. Isso é reportado? | Sim. `SD-001` exige que cada linha que traga uma dessas duas colunas tenha pelo menos uma preenchida e reporta a linha quando ambas estão vazias. Verifica que exista pelo menos uma, não se o assunto pertence ao âmbito «三重一大», nem se o procedimento ou a competência foram adequados. |

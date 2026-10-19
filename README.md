@@ -28,6 +28,35 @@ dsh --profile <name> --dump-config | grep 'dsh-soe-decision-check'
 
 The table below is the example set: the first row is the detailed walkthrough, the remaining rows are short cases.
 
+#### Detailed output
+
+**Tool** `soe_decision_check`
+
+**Input**
+
+~~~json
+{"meetingAt":"2026-03-05","rows":[{"前置研究":"是","前置研究日期":"2026-03-10","会议日期":"2026-03-05"}]}
+~~~
+ 
+**Output**
+
+~~~json
+{
+  "id": "dsh-soe-decision-check.SD-003.de09b5a6",
+  "ruleId": "SD-003",
+  "severity": "warn",
+  "locator": {
+    "row": 1,
+    "field": "consultedAt"
+  },
+  "found": "第 1 行「consultedAt」为 2026-03-10，晚于 「meetingAt」的 2026-03-05",
+  "expected": "「consultedAt」不应晚于 2026-03-05",
+  "fix": "前置研究日期不应晚于会议审议日期；核对两个日期的填写"
+}
+~~~
+
+*Observed from `dsh-soe-decision-check/tests/fixtures/SD-003/SD-003-unsafe.json`*
+
 | You ask | What it answers |
 |---|---|
 | A matter has neither its proposal nor its basis filled in. Does the check say anything? | Yes. `SD-001` requires at least one of those two columns on every row that carries either one, and reports the row when both are blank. It checks that at least one is filled, not whether the matter belongs to the “三重一大” scope, and not whether the decision procedure or the authority behind it was appropriate. |

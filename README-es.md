@@ -30,6 +30,35 @@ Salida real de este plugin sobre su propio fixture de prueba `SD-001` — no es 
 La tabla siguiente es el conjunto de ejemplos: la primera fila es el caso detallado y las demás son casos breves.
 
 
+#### Salida detallada
+
+**Herramienta** `soe_decision_check`
+
+**Entrada**
+
+~~~json
+{"meetingAt":"2026-03-05","rows":[{"前置研究":"是","前置研究日期":"2026-03-10","会议日期":"2026-03-05"}]}
+~~~
+ 
+**Salida**
+
+~~~json
+{
+  "id": "dsh-soe-decision-check.SD-003.de09b5a6",
+  "ruleId": "SD-003",
+  "severity": "warn",
+  "locator": {
+    "row": 1,
+    "field": "consultedAt"
+  },
+  "found": "第 1 行「consultedAt」为 2026-03-10，晚于 「meetingAt」的 2026-03-05",
+  "expected": "「consultedAt」不应晚于 2026-03-05",
+  "fix": "前置研究日期不应晚于会议审议日期；核对两个日期的填写"
+}
+~~~
+
+*Observado en `dsh-soe-decision-check/tests/fixtures/SD-003/SD-003-unsafe.json`*
+
 | Usted pregunta | Qué responde |
 |---|---|
 | Un asunto no tiene rellenos ni la propuesta ni el fundamento. ¿Se informa de algo? | Sí. `SD-001` exige que cada fila que traiga una de esas dos columnas tenga al menos una rellena, e informa de la fila cuando ambas están vacías. Comprueba que haya al menos una, no si el asunto pertenece al ámbito «三重一大», ni si el procedimiento o la competencia fueron los adecuados. |
