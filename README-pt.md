@@ -3,6 +3,7 @@
 [English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-soe-decision-check?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-soe-decision-check?ref=badge)
 
 `dsh-soe-decision-check` lê um registo de assuntos de decisão «三重一大» —o cabeçalho da empresa mais uma linha por assunto— e verifica o rasto procedimental desse mesmo registo: se cada assunto regista a sua proposta ou o seu fundamento, se um assunto marcado como previamente estudado regista a data do estudo, se a data do estudo não é posterior à data da reunião, se está registada uma deliberação e se um assunto deliberado regista a votação, se a categoria do assunto vem da lista de valores que configurar, se o registo declara a empresa e o órgão decisor, e se os números de assunto não se repetem.
 

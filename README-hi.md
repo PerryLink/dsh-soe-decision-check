@@ -3,6 +3,7 @@
 [English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-soe-decision-check?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-soe-decision-check?ref=badge)
 
 `dsh-soe-decision-check` «三重一大» निर्णय रजिस्टर को पढ़ता है — उद्यम का हेडर और प्रत्येक विषय की एक पंक्ति — और उसी रजिस्टर की प्रक्रियात्मक रिकॉर्ड-शृंखला की जाँच करता है: क्या प्रत्येक विषय अपनी प्रस्ताव-सामग्री या निर्णय-आधार दर्ज करता है, क्या पूर्व-अध्ययन किया हुआ चिह्नित विषय अध्ययन की तिथि दर्ज करता है, क्या अध्ययन की तिथि बैठक की तिथि के बाद नहीं है, क्या निर्णय दर्ज है और निर्णीत विषय मतदान परिणाम दर्ज करता है, क्या विषय-श्रेणी आपके द्वारा कॉन्फ़िगर किए गए मानों में से है, क्या रजिस्टर उद्यम और निर्णय लेने वाला निकाय घोषित करता है, और क्या विषय-क्रमांक अद्वितीय हैं।
 

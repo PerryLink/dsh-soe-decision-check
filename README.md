@@ -3,6 +3,7 @@
 [English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-soe-decision-check?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-soe-decision-check?ref=badge)
 
 `dsh-soe-decision-check` reads one “三重一大” decision register — the enterprise header plus one row per matter — and checks that register's own procedural trail: that each matter records its proposal or its basis, that a matter marked as pre-studied records a study date, that the pre-study date is not later than the meeting date, that a decision is recorded and a decided matter records its vote, that the matter category comes from the vocabulary you configure, that the register names the enterprise and the deciding body, and that matter numbers are unique.
 
