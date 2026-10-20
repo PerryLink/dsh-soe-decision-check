@@ -135,7 +135,7 @@ rules:
         check:
           kind: presence
           field: decision
-          fix: 补填决议结论；本条只核对是否记录，不判断决议是否合规
+          fix: 补填决议结论；本条只核对是否记录，不评价决议内容
     note: >-
       ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-triple-major.md）。
       ⚠️ **依据性质说明（2026-10-07）**：本意见是**中共中央办公厅、国务院办公厅印发的党内文件**，

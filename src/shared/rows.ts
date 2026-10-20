@@ -713,7 +713,13 @@ function sumToConstant(ctx: CheckContext): void {
     locatorOf(undefined, field),
     `${parsed.length} 行的「${field}」合计 ${Number(total.toFixed(4))}，与配置的目标值 ${target} 相差 ${Number(gap.toFixed(4))}`,
     `「${field}」的合计应为 ${target}，允许偏差 ${tolerance}`,
-    str(ctx.params, 'fix', '核对是否有行遗漏或数值抄错；本条只做加法核对，不判断设置是否合规'),
+    // The default fix text must survive wording.ts's guard, which scans the
+    // RENDERED report for adjudicating phrases and throws. An earlier version
+    // ended "…不判断设置是否合规", which reads as a disclaimer but is a bare
+    // substring hit, so every rule that fell through to this default crashed the
+    // renderer the first time it fired. Disclaimers have to be phrased without
+    // the forbidden words, not around them.
+    str(ctx.params, 'fix', '核对是否有行遗漏或数值抄错；本条只做加法核对，不评价分值设置本身'),
   )
 }
 
@@ -2054,8 +2060,17 @@ function runChecks(
   const issues: Issue[] = []
   const reasons = new Map<string, string>()
   const fired = new Set<string>()
+  const disabled = new Set([...ruleset.disabled, ...options.disabledRules])
+  const only = new Set(options.onlyRules)
 
   for (const rule of ruleset.rules) {
+    // A disabled or unselected rule must not run at all. This loop used to ignore
+    // both sets, so `disabledRules` and `onlyRules` only changed the `skipped`
+    // list: the report carried findings for rules it simultaneously said had not
+    // executed. A caller asking for one rule got all of them, plus a sentence
+    // claiming the others never ran - a contradiction no reader can resolve, and
+    // the kind of bug that looks like a passing test (both halves are "true").
+    if (disabled.has(rule.id) || (only.size > 0 && !only.has(rule.id))) continue
     // A check reads its settings from one flat bag, layered in a fixed order: the
     // rule's own top-level params, then `params.check` (where the pack declares the
     // check), then the per-call override last so it wins.
