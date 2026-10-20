@@ -52,7 +52,7 @@ rules:
           fields: ["proposal","basis"]
           fix: 补填议题内容与决策依据；本条只核对是否填写，不判断决策程序与权限是否适当
     note: >-
-      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-triple-major.md）。
+      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-17.md）。
       ⚠️ **依据性质说明（2026-10-07）**：本意见是**中共中央办公厅、国务院办公厅印发的党内文件**，
       **不是法律、行政法规或部门规章**，也不属于国家标准体系。
       ⇒ **即使条号与文字已核实，本条仍保持 derived-from-principle（封顶 warn）**：
@@ -80,7 +80,7 @@ rules:
           requiredFields: ["consultedAt"]
           conditionValues: ["是","Y","yes","true","已研究","√"]
     note: >-
-      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-triple-major.md）。
+      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-17.md）。
       ⚠️ **依据性质说明（2026-10-07）**：本意见是**中共中央办公厅、国务院办公厅印发的党内文件**，
       **不是法律、行政法规或部门规章**，也不属于国家标准体系。
       ⇒ **即使条号与文字已核实，本条仍保持 derived-from-principle（封顶 warn）**：
@@ -110,7 +110,7 @@ rules:
           notAfterField: meetingAt
           fix: 前置研究日期不应晚于会议审议日期；核对两个日期的填写
     note: >-
-      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-triple-major.md）。
+      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-17.md）。
       ⚠️ **依据性质说明（2026-10-07）**：本意见是**中共中央办公厅、国务院办公厅印发的党内文件**，
       **不是法律、行政法规或部门规章**，也不属于国家标准体系。
       ⇒ **即使条号与文字已核实，本条仍保持 derived-from-principle（封顶 warn）**：
@@ -137,7 +137,7 @@ rules:
           field: decision
           fix: 补填决议结论；本条只核对是否记录，不评价决议内容
     note: >-
-      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-triple-major.md）。
+      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-17.md）。
       ⚠️ **依据性质说明（2026-10-07）**：本意见是**中共中央办公厅、国务院办公厅印发的党内文件**，
       **不是法律、行政法规或部门规章**，也不属于国家标准体系。
       ⇒ **即使条号与文字已核实，本条仍保持 derived-from-principle（封顶 warn）**：
@@ -165,7 +165,7 @@ rules:
           conditionValues: []
           fix: 补填表决结果；本条只核对是否记录，不判断表决是否有效
     note: >-
-      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-triple-major.md）。
+      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-17.md）。
       ⚠️ **依据性质说明（2026-10-07）**：本意见是**中共中央办公厅、国务院办公厅印发的党内文件**，
       **不是法律、行政法规或部门规章**，也不属于国家标准体系。
       ⇒ **即使条号与文字已核实，本条仍保持 derived-from-principle（封顶 warn）**：
@@ -193,7 +193,7 @@ rules:
           field: category
           values: []
     note: >-
-      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-triple-major.md）。
+      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-17.md）。
       ⚠️ **依据性质说明（2026-10-07）**：本意见是**中共中央办公厅、国务院办公厅印发的党内文件**，
       **不是法律、行政法规或部门规章**，也不属于国家标准体系。
       ⇒ **即使条号与文字已核实，本条仍保持 derived-from-principle（封顶 warn）**：
@@ -220,7 +220,7 @@ rules:
           kind: headerPresence
           fields: ["company","body"]
     note: >-
-      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-triple-major.md）。
+      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-17.md）。
       ⚠️ **依据性质说明（2026-10-07）**：本意见是**中共中央办公厅、国务院办公厅印发的党内文件**，
       **不是法律、行政法规或部门规章**，也不属于国家标准体系。
       ⇒ **即使条号与文字已核实，本条仍保持 derived-from-principle（封顶 warn）**：
@@ -246,7 +246,7 @@ rules:
           kind: unique
           field: matterNo
     note: >-
-      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-triple-major.md）。
+      ✅ **本条已于 2026-10-07 换为逐字引文**（见 rules/evidence/clause-verification-soe-17.md）。
       ⚠️ **依据性质说明（2026-10-07）**：本意见是**中共中央办公厅、国务院办公厅印发的党内文件**，
       **不是法律、行政法规或部门规章**，也不属于国家标准体系。
       ⇒ **即使条号与文字已核实，本条仍保持 derived-from-principle（封顶 warn）**：
