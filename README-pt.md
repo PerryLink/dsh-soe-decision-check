@@ -107,7 +107,7 @@ exceeded, whether an amount reaches the "large fund operation" threshold, or who
 |---|---|
 | Harness | Faixa de peers `>=0.1.2-rc.1 <0.2.0 \|\| >=0.2.0-0 <0.3.0` — verificada para aceitar tanto `0.2.0-rc.2` quanto `0.2.1-rc.2`. **`engines.dsh` é declarado como `>=0.2.1-0 <0.3.0`** e o host o aplica desde 0.2.1 |
 | Node | `^22.19.0 || >=24.0.0` |
-| Plataformas | Todas (ESM puro; sem código nativo, sem rede, sem chamada ao modelo) |
+| Plataformas | Qualquer host que execute ESM puro em Node 22.19+; testado apenas em Linux |
 | Modo de ferramenta | Funciona em `native` e `ptc`; para um diretório inteiro use `ptc` |
 
 ## What it does
