@@ -92,11 +92,11 @@ exceeded, whether an amount reaches the "large fund operation" threshold, or who
 >   rarely records the quorum and voting rule needed to compute it.
 > - `SD-006`'s category vocabulary ships **empty**; with nothing configured it reports itself in `skipped`.
 >
-> **Every `excerpt` in the rule pack says, in so many words, that the clause text was not obtained.** The
-> regime lives in 《关于进一步推进国有企业贯彻落实"三重一大"决策制度的意见》(中办发〔2010〕17号) and each
-> enterprise's implementing measures. The verification pass could not retrieve verbatim clause text, so the
-> pack states the gap in the `excerpt` field itself and keeps every rule at `warn` or `info`. **When the texts
-> are in hand, replace each `excerpt` with the real clause and raise `kind` to `direct`.**
+> **Every `excerpt` in this plugin's rule pack is a verbatim quotation of the clause it cites, and**
+> **the citation gate re-checks each segment against the record in `rules/evidence/`.** 《关于进一步推进国有企业贯彻落实"三重一大"决策制度的意见》(中办发〔2010〕17号) and each enterprise's implementing measures. The
+> pack states a requirement verbatim when the clause states it, and stops at `warn` when the clause only
+> implies it: a check that rests on a general principle is capped below `error` and says so in its own
+> `note`. What the pack will not do is paraphrase a clause and present the paraphrase as a quotation.
 >
 > A further limit worth stating: this checks that the **trail** exists. A study recorded on the right date does
 > not prove the pre-study was substantive, and the plugin makes no finding about that.
