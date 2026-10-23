@@ -23,7 +23,7 @@
 import { diffDays, diffMinutes, parseWallClock } from './datetime.ts'
 import { issueId } from './report.ts'
 import { formatBasis } from './rules.ts'
-import type { Issue, Report, Severity } from './report.ts'
+import type { Issue, Locator, Report, Severity } from './report.ts'
 import type { Rule, Ruleset } from './rules.ts'
 
 /** One row of material, with both its own column names and the canonical ones. */
@@ -214,10 +214,13 @@ function optionalNumber(params: Record<string, unknown>, key: string): number | 
 }
 
 /** A finding's location: a row when known, plus the field it concerns. */
-function locatorOf(row: number | undefined, field: string): { row?: number; field?: string } {
-  const out: { row?: number; field?: string } = {}
+function locatorOf(row: number | undefined, field: string): Locator {
+  const out: Locator = {}
   if (row !== undefined) out.row = row
-  if (field !== '') out.field = field
+  // `Locator` calls this `column`; writing `field` here meant the name was
+  // silently dropped by `formatLocator` and never entered the issue id, so every
+  // row-level finding rendered as a bare "第 N 行数据".
+  if (field !== '') out.column = field
   return out
 }
 
