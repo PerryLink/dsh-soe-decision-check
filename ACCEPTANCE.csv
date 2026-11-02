@@ -1,0 +1,3 @@
+req_id,metric,threshold,actual,script,evidence_sha256,pass,source,counted
+CHK-SOE-DECISION-CHECK-A01,vitest 真实运行,33/33,33,npx vitest run,5864cd3a53f0bbeb10ba7a4f44991acbb0be93768bad0e3cb642cc964a70a0ad,true,public/synthetic,false
+CHK-SOE-DECISION-CHECK-A02,失败用例数,0,0,npx vitest run,5864cd3a53f0bbeb10ba7a4f44991acbb0be93768bad0e3cb642cc964a70a0ad,true,public/synthetic,false
