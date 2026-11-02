@@ -26,7 +26,8 @@
     "rules",
     "CHANGELOG.md",
     "SECURITY.md",
-    "docs"
+    "docs",
+    "docs/assets/*"
   ],
   "scripts": {
     "build": "tsdown",
