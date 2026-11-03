@@ -1,6 +1,6 @@
 # dsh-soe-decision-check — 三重一大决策台账核对
 
-## 快速试跑（1 分钟）
+### 快速试跑（1 分钟）
 
 ```bash
 node samples/quickstart/run.mjs --check
