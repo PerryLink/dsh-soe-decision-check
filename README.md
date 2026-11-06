@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-dark.svg">
-  <img src="docs/assets/dsh-soe-decision-check-flow-light.svg" width="100%" alt="dsh-soe-decision-check 数据流：材料（JSON/YAML）→ soe_decision_check → 规则库 SD-001…SD-008 → findings[] 与 skipped[]；每条 excerpt 回查 rules/evidence/">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-soe-decision-check-hero-zh-light.webp" width="100%" alt="dsh-soe-decision-check 横幅：把一份「三重一大」决策台账逐行核对成「哪一行、哪一栏、差什么」的清单——右侧台账样例中第 1 行的前置研究日期 2026-03-10 晚于会议日期 2026-03-05，差异卡按 locator / found / expected / fix 定位到行与栏；只列差异，结论留给复核人">
 </picture>
 
 # dsh-soe-decision-check
@@ -37,6 +37,11 @@ dsh plugin --profile <name> add dsh-soe-decision-check
 `dsh-soe-decision-check` 读取一份「三重一大」决策事项台账——企业表头加每个议题一行——核对这份台账自身的程序留痕：每个议题是否记录了议题内容或决策依据、标注为经前置研究的议题是否记录了研究日期、前置研究日期是否不晚于会议审议日期、是否记录了决议结论、已决议的议题是否记录了表决结果、事项类别是否出自你配置的取值口径、台账是否声明企业与决策机构、议题序号是否唯一。
 
 台账里已经写明的东西，它逐条核对；台账里没有的东西，它不补、不猜。输出是一份带 `locator`（第几行、哪一栏）、`found`（读到了什么）、`expected`（本应是什么）、`fix`（改哪里）的清单，供人工复核。纯 ESM：无联网、不调用模型、不改原件。
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-soe-decision-check-flow-v5-light.svg" width="100%" alt="dsh-soe-decision-check 结构图（三段程序留痕带）：台账（表头 + rows[] 中被规则读取的 9 栏）与规则包（8 条，加载期校验逐字引文与依据类型封顶）汇入 runTableCheck()；第 1 行按 会前 · 议题与前置研究（2026-02-20）→ 会议审议（2026-03-05）→ 决议记录 排成一条留痕带，SD-001 在会前段命中「议题内容」「决策依据」两项皆空，SD-003 跨段比较两个日期（02-20 ≤ 03-05 通过），SD-006 因 values 未配置进 skipped；出口 issues[]（第 1 行 · 字段 proposal，warn 1）与 skipped[]（逐条原因）交给复核人，结论不在报告里">
+</picture>
 
 ## 三步上手
 
@@ -345,7 +350,7 @@ node ../scripts/sync-shared.mjs dsh-soe-decision-check    # 把 ../_shared 的�
 
 发布前门禁：`pnpm run typecheck && pnpm test && pnpm run build && pnpm run verify:self-contained && pnpm run check:lockfile && pnpm run check:readmes`。
 
-插件是 **data-only**：`src/model.ts` 声明表格形状，共享件提供读取器与检查引擎，规则库声明每一条检查。配图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成（Python + Pillow），可重复执行。
+插件是 **data-only**：`src/model.ts` 声明表格形状，共享件提供读取器与检查引擎，规则库声明每一条检查。配图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成（Pillow 画 hero，手写 SVG 画结构图）：`python scripts/gen-readme-assets.py` 写出 `docs/assets/dsh-soe-decision-check-hero-{zh,en}-{light,dark}.webp` 与 `docs/assets/dsh-soe-decision-check-flow-v5-{light,dark}.svg`。hero 分 zh/en 两版，结构图只用命令 token，五语共用；旧的单版流程图与演示图保留在 `docs/assets/` 供外链使用。
 
 Topics：`deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `soe`, `decision`
 

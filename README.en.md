@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-dark.svg">
-  <img src="docs/assets/dsh-soe-decision-check-flow-light.svg" width="100%" alt="dsh-soe-decision-check data flow: material (JSON/YAML) → soe_decision_check → rule pack SD-001…SD-008 → findings[] and skipped[]; every excerpt is re-checked against rules/evidence/">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-soe-decision-check-hero-en-light.webp" width="100%" alt="dsh-soe-decision-check banner: turns one SOE decision register into a list of which row, which column and what differs — the specimen on the right shows row 1 with a pre-study date 2026-03-10 after the meeting date 2026-03-05, and the difference card pins locator / found / expected / fix; differences only, the verdict stays with the reviewer">
 </picture>
 
 # dsh-soe-decision-check
@@ -39,6 +39,11 @@ dsh plugin --profile <name> add dsh-soe-decision-check
 “Three-important-and-one-large” is the SOE decision category set the Chinese rule pack cites: major decisions, key personnel appointments, major project arrangements, and large-sum fund operations.
 
 What the register already states, the checker compares line by line; what the register does not state, it neither fills in nor guesses. The output is a list of findings carrying `locator` (which row, which field), `found` (what was read), `expected` (what it should have been), and `fix` (what to change), for a human to review. Pure ESM: no network, no model call, and the original file is never modified.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-soe-decision-check-flow-v5-light.svg" width="100%" alt="dsh-soe-decision-check structure (a three-segment procedure trace band): the register (header plus the nine row columns the rules read) and the rule pack (eight rules, load-time checks on verbatim excerpts and severity caps) meet in runTableCheck(); row 1 is drawn as one trace band running 1) pre-study 2026-02-20, 2) meeting review 2026-03-05, 3) resolution record; SD-001 reports the empty proposal and basis in the pre-study segment, SD-003 compares the two dates across segments (02-20 ≤ 03-05 passes), SD-006 is skipped because its values ship empty; the exits are issues[] (row 1 · field proposal, warn 1) and skipped[] with one reason per rule, and the verdict stays with the reviewer">
+</picture>
 
 ## Three-step setup
 
@@ -358,7 +363,7 @@ node ../scripts/sync-shared.mjs dsh-soe-decision-check    # copy the shared kit 
 
 Pre-release gate: `pnpm run typecheck && pnpm test && pnpm run build && pnpm run verify:self-contained && pnpm run check:lockfile && pnpm run check:readmes`.
 
-The plugin is **data-only**: `src/model.ts` declares the table shape, the shared kit supplies the reader and the check engine, and the rule pack declares every check. The README images are generated programmatically by [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Python + Pillow) and are safe to re-run.
+The plugin is **data-only**: `src/model.ts` declares the table shape, the shared kit supplies the reader and the check engine, and the rule pack declares every check. The README images are generated programmatically by [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Pillow for the hero, hand-written SVG for the structure figure) and are safe to re-run: `python scripts/gen-readme-assets.py` writes `docs/assets/dsh-soe-decision-check-hero-{zh,en}-{light,dark}.webp` and `docs/assets/dsh-soe-decision-check-flow-v5-{light,dark}.svg` (localized hero, token-only structure figure shared by all five languages). The older single-skin flow diagram and the demo images stay in `docs/assets/` for external deep links.
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `soe`, `decision`
 

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" role="img" aria-labelledby="fig-title fig-desc">
+<title id="fig-title">dsh-soe-decision-check structure: a three-segment procedure trace band</title>
+<desc id="fig-desc">Register and rule pack feed runTableCheck(); one matter is drawn as a trace band split into pre-study, meeting review and resolution record; SD-001 hits the empty proposal and basis, SD-003 compares the two dates across the segment boundary, SD-006 is skipped; issues[] and skipped[] leave the band and the verdict stays with the reviewer.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#f9f6fd"/><stop offset="1" stop-color="#e4eaf8"/></linearGradient>
+<filter id="soft" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#16122c" flood-opacity="0.10"/></filter>
+</defs>
+<rect width="1100" height="660" fill="url(#bg)"/>
+<text x="44.0" y="58.0" fill="#141419" font-family="'Consolas','SFMono-Regular',Menlo,ui-monospace,monospace" font-size="26" font-weight="700" text-anchor="start">dsh-soe-decision-check</text>
+<text x="44.0" y="86.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13.5" text-anchor="start">八条规则只读一份「三重一大」决策台账：栏名先归一，再逐段核对程序留痕，差异落到行号与栏名。</text>
+<rect x="841.0" y="38" width="215.0" height="26" rx="13" fill="#efeaf9"/>
+<text x="854.0" y="55.4" fill="#4B67B4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">规则包 v2026.1 · SD-001…SD-008</text>
+<rect x="44" y="104" width="1012" height="102" rx="18" fill="#ffffff" stroke="#e4e0f0" stroke-width="1.5" filter="url(#soft)"/>
+<text x="62.0" y="128.0" fill="#4B67B4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="700" text-anchor="start">输入 · 决策台账（表头 + rows[]，JSON / YAML，只读）</text>
+<rect x="804.0" y="112" width="234.0" height="24" rx="12" fill="#efeaf9"/>
+<text x="816.0" y="128.4" fill="#4B67B4" font-family="'Consolas','SFMono-Regular',Menlo,ui-monospace,monospace" font-size="11" text-anchor="start">soe_decision_check(file | material)</text>
+<text x="62.0" y="152.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">某某集团有限公司 · 党委会 · 2026 年第 3 次 · 会议日期 2026-03-05</text>
+<rect x="919.0" y="138" width="119.0" height="22" rx="11" fill="#e7f4e9"/>
+<text x="931.0" y="153.4" fill="#15803d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">SD-007 表头声明 ✓</text>
+<rect x="62" y="164" width="976" height="34" rx="10" fill="#f5f2fc"/>
+<text x="76.0" y="186.0" fill="#4B67B4" font-family="'Consolas','SFMono-Regular',Menlo,ui-monospace,monospace" font-size="11" text-anchor="start">rows[]</text>
+<text x="128.0" y="186.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">序号</text>
+<text x="158.0" y="186.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">·</text>
+<text x="167.0" y="186.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">议题内容</text>
+<text x="219.0" y="186.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">·</text>
+<text x="228.0" y="186.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">决策依据</text>
+<text x="280.0" y="186.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">·</text>
+<text x="289.0" y="186.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">前置研究</text>
+<text x="341.0" y="186.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">·</text>
+<text x="350.0" y="186.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">前置研究日期</text>
+<text x="424.0" y="186.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">·</text>
+<text x="433.0" y="186.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">会议日期</text>
+<text x="485.0" y="186.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">·</text>
+<text x="494.0" y="186.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">决议结论</text>
+<text x="546.0" y="186.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">·</text>
+<text x="555.0" y="186.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">表决结果</text>
+<text x="607.0" y="186.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">·</text>
+<text x="616.0" y="186.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">事项类别</text>
+<text x="1026.0" y="186.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="end">栏名归一：忽略大小写 / 空格 / 下划线 / 连字符</text>
+<rect x="44" y="214" width="1012" height="66" rx="18" fill="#ffffff" stroke="#e4e0f0" stroke-width="1.5" filter="url(#soft)"/>
+<text x="62.0" y="240.0" fill="#4B67B4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="700" text-anchor="start">规则包 · rules/soe-decision-check.yaml</text>
+<text x="1038.0" y="240.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="end">8 条规则 · 数据不是代码</text>
+<text x="62.0" y="264.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">加载期校验：excerpt 须为逐字引文且 ≥8 字 · 依据类型封顶（8 条全部 derived-from-principle → ≤ warn）· 引文回查 rules/evidence/</text>
+<text x="1038.0" y="264.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="end">替换 YAML 即换规则集</text>
+<rect x="44" y="292" width="1012" height="224" rx="18" fill="#ffffff" stroke="#e4e0f0" stroke-width="1.5" filter="url(#soft)"/>
+<text x="62.0" y="316.0" fill="#4B67B4" font-family="'Consolas','SFMono-Regular',Menlo,ui-monospace,monospace" font-size="12" text-anchor="start">parseMaterial() + loadRulesetFile() → runTableCheck()</text>
+<text x="1038.0" y="316.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="end">命中进 issues[] · 未执行进 skipped[] · 跑过未命中两栏都不进</text>
+<rect x="62" y="326" width="976" height="40" rx="10" fill="#f5f2fc"/>
+<text x="76.0" y="351.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13" font-weight="700" text-anchor="start">第 1 行 · 某某技改项目立项</text>
+<text x="290.0" y="351.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">序号 1</text>
+<text x="350.0" y="351.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">涉及金额 4800 万元</text>
+<rect x="911.0" y="335" width="119.0" height="22" rx="11" fill="#e7f4e9"/>
+<text x="923.0" y="350.4" fill="#15803d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">SD-008 跨行唯一 ✓</text>
+<line x1="80.0" y1="380.0" x2="1014.0" y2="380.0" stroke="#4B67B4" stroke-width="2" stroke-linecap="round"/>
+<path d="M1006.0 375.0l8 5-8 5" fill="none" stroke="#4B67B4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="224.7" cy="380.0" r="10" fill="#ffffff" stroke="#4B67B4" stroke-width="1.6"/>
+<text x="224.7" y="383.8" fill="#4B67B4" font-family="'Consolas','SFMono-Regular',Menlo,ui-monospace,monospace" font-size="11" text-anchor="middle">1</text>
+<circle cx="550.0" cy="380.0" r="10" fill="#ffffff" stroke="#4B67B4" stroke-width="1.6"/>
+<text x="550.0" y="383.8" fill="#4B67B4" font-family="'Consolas','SFMono-Regular',Menlo,ui-monospace,monospace" font-size="11" text-anchor="middle">2</text>
+<circle cx="875.3" cy="380.0" r="10" fill="#ffffff" stroke="#4B67B4" stroke-width="1.6"/>
+<text x="875.3" y="383.8" fill="#4B67B4" font-family="'Consolas','SFMono-Regular',Menlo,ui-monospace,monospace" font-size="11" text-anchor="middle">3</text>
+<line x1="387.3" y1="392" x2="387.3" y2="494" stroke="#e4e0f0" stroke-width="1.2" stroke-dasharray="4 5"/>
+<line x1="712.7" y1="392" x2="712.7" y2="494" stroke="#e4e0f0" stroke-width="1.2" stroke-dasharray="4 5"/>
+<text x="78.0" y="406.0" fill="#4B67B4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="700" text-anchor="start">会前 · 议题与前置研究</text>
+<text x="78.0" y="424.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">前置研究日期</text>
+<text x="158.0" y="424.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12" text-anchor="start">2026-02-20</text>
+<text x="78.0" y="443.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">前置研究</text>
+<text x="134.0" y="443.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12" text-anchor="start">是</text>
+<text x="78.0" y="462.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">议题内容</text>
+<rect x="133.0" y="450" width="34" height="17" rx="8.5" fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="150.0" y="461.8" fill="#b45309" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="middle">空</text>
+<text x="187.0" y="462.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">决策依据</text>
+<rect x="242.0" y="450" width="34" height="17" rx="8.5" fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="259.0" y="461.8" fill="#b45309" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="middle">空</text>
+<text x="403.3" y="406.0" fill="#4B67B4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="700" text-anchor="start">会议审议</text>
+<text x="403.3" y="424.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">会议日期</text>
+<text x="459.3" y="424.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12" text-anchor="start">2026-03-05</text>
+<text x="403.3" y="443.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">事项类别</text>
+<text x="459.3" y="443.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12" text-anchor="start">重大项目安排</text>
+<text x="403.3" y="462.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">条款（九）</text>
+<text x="471.3" y="462.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12" text-anchor="start">以会议形式决策</text>
+<text x="728.7" y="406.0" fill="#4B67B4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="700" text-anchor="start">决议记录</text>
+<text x="728.7" y="424.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">决议结论</text>
+<text x="784.7" y="424.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12" text-anchor="start">同意立项，概算 ≤4800 万元</text>
+<text x="728.7" y="443.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">表决结果</text>
+<text x="784.7" y="443.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12" text-anchor="start">应到 9 · 实到 9 · 同意 9</text>
+<text x="728.7" y="462.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">承办部门</text>
+<text x="784.7" y="462.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="12" text-anchor="start">发展策划部</text>
+<rect x="78.0" y="478" width="84.0" height="22" rx="11" fill="#fdf1e2"/>
+<text x="120.0" y="493.4" fill="#b45309" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="middle">SD-001 命中</text>
+<rect x="172.0" y="478" width="84.0" height="22" rx="11" fill="#e7f4e9"/>
+<text x="214.0" y="493.4" fill="#15803d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="middle">SD-002 通过</text>
+<rect x="403.3" y="478" width="145.0" height="22" rx="11" fill="#e7f4e9"/>
+<text x="475.8" y="493.4" fill="#15803d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="middle">SD-003 02-20 ≤ 03-05 ✓</text>
+<rect x="558.3" y="478" width="103.0" height="22" rx="11" fill="#f5f2fc" stroke="#64748b" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="609.8" y="493.4" fill="#64748b" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="middle">SD-006 skipped</text>
+<rect x="728.7" y="478" width="84.0" height="22" rx="11" fill="#e7f4e9"/>
+<text x="770.7" y="493.4" fill="#15803d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="middle">SD-004 通过</text>
+<rect x="822.7" y="478" width="84.0" height="22" rx="11" fill="#e7f4e9"/>
+<text x="864.7" y="493.4" fill="#15803d" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="middle">SD-005 通过</text>
+<rect x="44" y="524" width="656" height="78" rx="18" fill="#ffffff" stroke="#e4e0f0" stroke-width="1.5" filter="url(#soft)"/>
+<text x="62.0" y="548.0" fill="#4B67B4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="700" text-anchor="start">issues[] · 1 条</text>
+<rect x="622.0" y="530" width="60.0" height="22" rx="11" fill="#fdf1e2"/>
+<text x="634.0" y="545.4" fill="#b45309" font-family="'Consolas','SFMono-Regular',Menlo,ui-monospace,monospace" font-size="11" text-anchor="start">warn 1</text>
+<text x="62.0" y="570.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">SD-001 · 第 1 行 · 字段 proposal</text>
+<text x="62.0" y="590.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">proposal、basis 都为空 → 补填议题内容与决策依据</text>
+<rect x="716" y="524" width="340" height="78" rx="18" fill="#ffffff" stroke="#e4e0f0" stroke-width="1.5" filter="url(#soft)"/>
+<text x="734.0" y="548.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="13.5" font-weight="700" text-anchor="start">skipped[] · 1 条</text>
+<rect x="956.0" y="530" width="74" height="22" rx="11" fill="#f5f2fc" stroke="#64748b" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="993.0" y="545.4" fill="#64748b" font-family="'Consolas','SFMono-Regular',Menlo,ui-monospace,monospace" font-size="11" text-anchor="middle">SD-006</text>
+<text x="734.0" y="570.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">values 未配置 · 规则库不硬编码</text>
+<text x="734.0" y="590.0" fill="#141419" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11.5" text-anchor="start">「category」口径由本机构规定</text>
+<line x1="44" y1="612" x2="1056" y2="612" stroke="#e4e0f0" stroke-width="1"/>
+<text x="44.0" y="632.0" fill="#4d5261" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">报告：error 0 · warn 1 · info 0 ｜ issueCount 1 · skippedCount 1 ｜ markdown + reportJson ｜ 结论留给复核人</text>
+<text x="44.0" y="650.0" fill="#8f94a4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif" font-size="11" text-anchor="start">只读材料 · 无网络 · 不调用模型 · 原件不改 ｜ config：rulesFile · disabledRules · onlyRules · skipNotes · timeoutMs</text>
+</svg>

@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-dark.svg">
-  <img src="docs/assets/dsh-soe-decision-check-flow-light.svg" width="100%" alt="dsh-soe-decision-check डेटा प्रवाह: सामग्री (JSON/YAML) → soe_decision_check → नियम-पैक SD-001…SD-008 → findings[] और skipped[]; हर excerpt rules/evidence/ से मिलाया जाता है">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-soe-decision-check-hero-en-light.webp" width="100%" alt="dsh-soe-decision-check बैनर: एक «三重一大» निर्णय रजिस्टर को «कौन-सी पंक्ति, कौन-सा स्तंभ, क्या अंतर» की सूची में बदलता है — दाईं ओर पंक्ति 1 की पूर्व-अध्ययन तिथि 2026-03-10 बैठक की तिथि 2026-03-05 के बाद है, और अंतर-कार्ड locator / found / expected / fix के साथ पंक्ति और स्तंभ दिखाता है; केवल अंतर, निर्णय समीक्षक के पास">
 </picture>
 
 # dsh-soe-decision-check
@@ -39,6 +39,11 @@ dsh plugin --profile <name> add dsh-soe-decision-check
 «三重一大» (तीन महत्वपूर्ण और एक बड़ा) वही उद्यम-निर्णय श्रेणियाँ हैं जिन्हें नियम-पैक उद्धृत करता है: महत्वपूर्ण निर्णय, प्रमुख कार्मिक नियुक्तियाँ, प्रमुख परियोजनाएँ और बड़ी राशि की निधि-संचालन।
 
 रजिस्टर जो पहले से कहता है, जाँचकर्ता उसे पंक्ति-दर-पंक्ति मिलाता है; जो रजिस्टर नहीं कहता, उसे न भरता है न अनुमान लगाता है। आउटपुट ऐसे निष्कर्षों की सूची है जिसमें `locator` (कौन-सी पंक्ति, कौन-सा फ़ील्ड), `found` (क्या पढ़ा गया), `expected` (क्या होना चाहिए था) और `fix` (क्या सुधारें) होते हैं, मानवीय पुनरीक्षण के लिए। शुद्ध ESM: कोई नेटवर्क नहीं, कोई मॉडल कॉल नहीं, और मूल फ़ाइल कभी नहीं बदलती।
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-soe-decision-check-flow-v5-light.svg" width="100%" alt="dsh-soe-decision-check की संरचना (तीन खंडों वाली प्रक्रिया-रिकॉर्ड पट्टी): रजिस्टर (हेडर + वे 9 पंक्ति-स्तंभ जिन्हें नियम पढ़ते हैं) और नियम-पैक (8 नियम, लोड पर शब्दशः उद्धरण और गंभीरता-सीमा की जाँच) runTableCheck() में मिलते हैं; पंक्ति 1 एक ही पट्टी में ① पूर्व-अध्ययन (2026-02-20) → ② बैठक समीक्षा (2026-03-05) → ③ संकल्प रिकॉर्ड के रूप में खींची गई है; SD-001 पहले खंड में खाली proposal और basis दर्ज करता है, SD-003 खंडों के बीच दोनों तिथियों की तुलना करता है (02-20 ≤ 03-05, उत्तीर्ण), SD-006 values खाली होने से skipped में जाता है; निर्गम issues[] (पंक्ति 1 · फ़ील्ड proposal, warn 1) और skipped[] (हर नियम का कारण) हैं, और निर्णय रिपोर्ट में नहीं है">
+</picture>
 
 ## तीन चरणों में शुरुआत
 
@@ -345,7 +350,7 @@ node ../scripts/sync-shared.mjs dsh-soe-decision-check    # ../_shared का �
 
 प्रकाशन-पूर्व द्वार: `pnpm run typecheck && pnpm test && pnpm run build && pnpm run verify:self-contained && pnpm run check:lockfile && pnpm run check:readmes`.
 
-प्लगइन **data-only** है: `src/model.ts` तालिका का आकार घोषित करता है, साझा किट पढ़ने वाला और जाँच-इंजन देता है, और नियम-पैक हर जाँच घोषित करता है। README की छवियाँ [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Python + Pillow) से प्रोग्रामेटिक रूप में बनती हैं और सुरक्षित रूप से दोबारा चलाई जा सकती हैं।
+प्लगइन **data-only** है: `src/model.ts` तालिका का आकार घोषित करता है, साझा किट पढ़ने वाला और जाँच-इंजन देता है, और नियम-पैक हर जाँच घोषित करता है। README की छवियाँ [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (hero के लिए Pillow, संरचना चित्र के लिए हाथ से लिखा SVG) से प्रोग्रामेटिक रूप में बनती हैं और सुरक्षित रूप से दोबारा चलाई जा सकती हैं: `python scripts/gen-readme-assets.py` `docs/assets/dsh-soe-decision-check-hero-{zh,en}-{light,dark}.webp` और `docs/assets/dsh-soe-decision-check-flow-v5-{light,dark}.svg` लिखता है (hero स्थानीयकृत, संरचना चित्र केवल कमांड token, पाँचों भाषाओं में साझा)। पुराना एकल-स्किन फ़्लो चित्र और डेमो छवियाँ बाहरी लिंक के लिए `docs/assets/` में बनी रहती हैं।
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `soe`, `decision`
 

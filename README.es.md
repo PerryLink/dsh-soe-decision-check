@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-dark.svg">
-  <img src="docs/assets/dsh-soe-decision-check-flow-light.svg" width="100%" alt="Flujo de datos de dsh-soe-decision-check: material (JSON/YAML) → soe_decision_check → paquete de reglas SD-001…SD-008 → findings[] y skipped[]; cada excerpt se revisa contra rules/evidence/">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-soe-decision-check-hero-en-light.webp" width="100%" alt="dsh-soe-decision-check, cabecera: convierte un registro de asuntos de decisión «三重一大» en una lista de qué fila, qué columna y qué difiere — a la derecha, la fila 1 tiene la fecha de estudio previo 2026-03-10 posterior a la fecha de reunión 2026-03-05, y la tarjeta de diferencias fija locator / found / expected / fix; solo diferencias, la conclusión queda en manos del revisor">
 </picture>
 
 # dsh-soe-decision-check
@@ -39,6 +39,11 @@ dsh plugin --profile <name> add dsh-soe-decision-check
 «三重一大» (tres importantes y uno grande) es el conjunto de categorías de decisión de empresa estatal que cita el paquete de reglas: decisiones importantes, nombramientos de personal clave, grandes proyectos y operaciones de fondos de gran cuantía.
 
 Lo que el registro ya declara, el verificador lo compara línea por línea; lo que el registro no declara, no lo rellena ni lo adivina. La salida es una lista de hallazgos con `locator` (qué fila, qué campo), `found` (qué se leyó), `expected` (qué debería haber) y `fix` (qué corregir), para revisión humana. ESM puro: sin red, sin llamadas al modelo y sin modificar el archivo original.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-soe-decision-check-flow-v5-light.svg" width="100%" alt="Estructura de dsh-soe-decision-check (una banda de rastro en tres tramos): el registro (cabecera + las 9 columnas de fila que leen las reglas) y el paquete de reglas (8 reglas, con validación en carga de citas literales y topes de gravedad) confluyen en runTableCheck(); la fila 1 se dibuja como una sola banda ① estudio previo (2026-02-20) → ② reunión (2026-03-05) → ③ registro de la resolución; SD-001 marca proposal y basis vacíos en el primer tramo, SD-003 compara las dos fechas entre tramos (02-20 ≤ 03-05, pasa) y SD-006 queda en skipped por no tener values; las salidas son issues[] (fila 1 · campo proposal, warn 1) y skipped[] con el motivo de cada regla, y la conclusión no está en el informe">
+</picture>
 
 ## Instalación en tres pasos
 
@@ -345,7 +350,7 @@ node ../scripts/sync-shared.mjs dsh-soe-decision-check    # copia el kit compart
 
 Puerta previa a la publicación: `pnpm run typecheck && pnpm test && pnpm run build && pnpm run verify:self-contained && pnpm run check:lockfile && pnpm run check:readmes`.
 
-El plugin es **solo datos**: `src/model.ts` declara la forma de la tabla, el kit compartido aporta el lector y el motor de comprobación, y el paquete de reglas declara cada comprobación. Las imágenes del README se generan programáticamente con [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Python + Pillow) y se pueden reejecutar sin riesgo.
+El plugin es **solo datos**: `src/model.ts` declara la forma de la tabla, el kit compartido aporta el lector y el motor de comprobación, y el paquete de reglas declara cada comprobación. Las imágenes del README se generan programáticamente con [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Pillow para la cabecera, SVG escrito a mano para la estructura) y se pueden reejecutar sin riesgo: `python scripts/gen-readme-assets.py` escribe `docs/assets/dsh-soe-decision-check-hero-{zh,en}-{light,dark}.webp` y `docs/assets/dsh-soe-decision-check-flow-v5-{light,dark}.svg` (cabecera localizada, figura de estructura solo con tokens compartida por los cinco idiomas). El diagrama de flujo antiguo y las imágenes de demostración permanecen en `docs/assets/` para los enlaces externos.
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `soe`, `decision`
 

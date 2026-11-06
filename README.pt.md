@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-dark.svg">
-  <img src="docs/assets/dsh-soe-decision-check-flow-light.svg" width="100%" alt="Fluxo de dados do dsh-soe-decision-check: material (JSON/YAML) → soe_decision_check → pacote de regras SD-001…SD-008 → findings[] e skipped[]; cada excerpt é revisado contra rules/evidence/">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-soe-decision-check-hero-en-light.webp" width="100%" alt="dsh-soe-decision-check, faixa: transforma um registo de assuntos de decisão «三重一大» numa lista de que linha, que coluna e o que difere — à direita, a linha 1 tem a data de estudo prévio 2026-03-10 posterior à data da reunião 2026-03-05, e o cartão de diferenças fixa locator / found / expected / fix; só diferenças, a conclusão fica com o revisor">
 </picture>
 
 # dsh-soe-decision-check
@@ -39,6 +39,11 @@ O `dsh-soe-decision-check` lê um registro de assuntos de decisão «三重一�
 «三重一大» (três importantes e um grande) é o conjunto de categorias de decisão de empresa estatal citado pelo pacote de regras: decisões importantes, nomeações de pessoal-chave, grandes projetos e operações de fundos de grande montante.
 
 O que o registo já declara, o verificador compara linha por linha; o que o registo não declara, não preenche nem adivinha. A saída é uma lista de achados com `locator` (qual linha, qual campo), `found` (o que foi lido), `expected` (o que deveria ser) e `fix` (o que corrigir), para revisão humana. ESM puro: sem rede, sem chamadas ao modelo e sem alterar o arquivo original.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-soe-decision-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-soe-decision-check-flow-v5-light.svg" width="100%" alt="Estrutura do dsh-soe-decision-check (uma faixa de rasto em três troços): o registo (cabeçalho + as 9 colunas de linha que as regras leem) e o pacote de regras (8 regras, com validação de citações literais e tetos de gravidade no carregamento) convergem em runTableCheck(); a linha 1 é desenhada como uma só faixa ① estudo prévio (2026-02-20) → ② reunião (2026-03-05) → ③ registo da deliberação; SD-001 assinala proposal e basis vazios no primeiro troço, SD-003 compara as duas datas entre troços (02-20 ≤ 03-05, passa) e SD-006 fica em skipped por não ter values; as saídas são issues[] (linha 1 · campo proposal, warn 1) e skipped[] com o motivo de cada regra, e a conclusão não está no relatório">
+</picture>
 
 ## Instalação em três passos
 
@@ -345,7 +350,7 @@ node ../scripts/sync-shared.mjs dsh-soe-decision-check    # copia o kit comparti
 
 Porta pré-publicação: `pnpm run typecheck && pnpm test && pnpm run build && pnpm run verify:self-contained && pnpm run check:lockfile && pnpm run check:readmes`.
 
-O plugin é **somente dados**: `src/model.ts` declara a forma da tabela, o kit compartilhado fornece o leitor e o motor de verificação, e o pacote de regras declara cada verificação. As imagens do README são geradas programaticamente por [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Python + Pillow) e podem ser reexecutadas sem risco.
+O plugin é **somente dados**: `src/model.ts` declara a forma da tabela, o kit compartilhado fornece o leitor e o motor de verificação, e o pacote de regras declara cada verificação. As imagens do README são geradas programaticamente por [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Pillow para o cabeçalho, SVG escrito à mão para a estrutura) e podem ser reexecutadas sem risco: `python scripts/gen-readme-assets.py` escreve `docs/assets/dsh-soe-decision-check-hero-{zh,en}-{light,dark}.webp` e `docs/assets/dsh-soe-decision-check-flow-v5-{light,dark}.svg` (cabeçalho localizado, figura de estrutura só com tokens partilhada pelos cinco idiomas). O diagrama de fluxo antigo e as imagens de demonstração ficam em `docs/assets/` para ligações externas.
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `soe`, `decision`
 
