@@ -45,6 +45,11 @@ O que o registo já declara, o verificador compara linha por linha; o que o regi
   <img src="docs/assets/dsh-soe-decision-check-flow-v5-light.svg" width="100%" alt="Estrutura do dsh-soe-decision-check (uma faixa de rasto em três troços): o registo (cabeçalho + as 9 colunas de linha que as regras leem) e o pacote de regras (8 regras, com validação de citações literais e tetos de gravidade no carregamento) convergem em runTableCheck(); a linha 1 é desenhada como uma só faixa ① estudo prévio (2026-02-20) → ② reunião (2026-03-05) → ③ registo da deliberação; SD-001 assinala proposal e basis vazios no primeiro troço, SD-003 compara as duas datas entre troços (02-20 ≤ 03-05, passa) e SD-006 fica em skipped por não ter values; as saídas são issues[] (linha 1 · campo proposal, warn 1) e skipped[] com o motivo de cada regra, e a conclusão não está no relatório">
 </picture>
 
+![dsh-soe-decision-check: execução real de terminal](docs/assets/dsh-soe-decision-check-demo.gif)
+
+*Repetição animada de uma execução real registrada neste repositório.*
+
+
 ## Instalação em três passos
 
 1. **Instalar**:

@@ -122,6 +122,10 @@ Registers one tool, `soe_decision_check`: read one register, apply one versioned
 
 ### Examples
 
+![dsh-soe-decision-check: real terminal run](docs/assets/dsh-soe-decision-check-demo.gif)
+
+*Animated replay of a real run recorded in this repository.*
+
 These are the plugin's real entry points; install once, then call one.
 
 **Detailed output** — tool `soe_decision_check`
