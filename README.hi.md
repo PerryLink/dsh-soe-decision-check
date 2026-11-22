@@ -11,6 +11,8 @@
 
 राज्य उद्यमों के गवर्नेंस और अनुपालन कर्मचारियों के लिए DeepSeek Harness जाँचकर्ता: एक निर्णय रजिस्टर पढ़ता है — उद्यम का हेडर और प्रत्येक विषय की एक पंक्ति — संस्करण-युक्त नियम-पैक लागू करता है, और ऐसे निष्कर्ष लौटाता है जिन्हें पंक्ति-दर-पंक्ति ढूँढा और दोबारा जाँचा जा सके।
 
+अंतिम सत्यापन: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [इंस्टॉल](#तीन-चरणों-में-शुरुआत) · [कॉन्फ़िगरेशन](#कॉन्फ़िगरेशन) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -48,7 +50,6 @@ dsh plugin --profile <name> add dsh-soe-decision-check
 ![dsh-soe-decision-check का असली टर्मिनल रन](docs/assets/dsh-soe-decision-check-demo.gif)
 
 *इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
-
 
 ## तीन चरणों में शुरुआत
 
