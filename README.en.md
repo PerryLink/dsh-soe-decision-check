@@ -7,6 +7,8 @@
 
 # dsh-soe-decision-check
 
+Current version `0.2.18`.
+
 **Turn one “three-important-and-one-large” decision register into a list of what is inconsistent, where, and what to fix — differences only, never a compliance verdict.**
 
 A DeepSeek Harness checker for state-owned enterprise governance and compliance staff: it reads one decision register — the enterprise header plus one row per matter — applies a versioned rule pack, and returns findings you can locate and re-check line by line.
